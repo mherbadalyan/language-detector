@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.plx";
+option java_outer_classname = "LanguageDetectionProto";
+
+package LanguageDetectionService;
+
+service LanguageDetectionGrpc {
+  rpc detectLanguage (LanguageDetectionRequest) returns (LanguageDetectionResponse) {}
+}
+
+message LanguageDetectionRequest {
+  string text = 1;
+}
+
+message LanguageDetectionResponse {
+  string language = 1;
+}
